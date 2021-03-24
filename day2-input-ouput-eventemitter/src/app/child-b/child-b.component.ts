@@ -14,11 +14,7 @@ export class ChildBComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-        this.dataToParent.emit(2);
-    }, 2000);
-  }
+  ngOnInit(): void {  }
 
   onClick(): void {
     this.counter += 1;

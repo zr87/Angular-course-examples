@@ -1,11 +1,26 @@
 <h1>App component (parent component)</h1>
 
-<h3>Output from childB? {{ dataFromChildB }}</h3>
 
-<h4> {{ title }}</h4>
 
-<div>
-  <app-child-a [inputData]="dataToChildA"></app-child-a>
-  <app-child-b (dataToParent)="handleOutput($event)"></app-child-b>
-  <app-child-c [(data)]="title"></app-child-c>
+
+
+<div class="flex-container">
+  <div>
+    <!--input -->
+    <h3>dataToChildA: {{ dataToChildA }}</h3>
+    <app-child-a [dataFromParent]="dataToChildA"></app-child-a>
+  </div>
+
+  <div>
+    <!-- output-->
+    <h3>Output from childB: {{ dataFromChildB }}</h3>
+    <app-child-b (dataToParent)="handleOutput($event)"></app-child-b>
+
+  </div>
+  <!-- two way binding -->
+  <div>
+    <p> this.title: <b>{{ title }}</b></p>
+    <app-child-c [(data)]="title"></app-child-c>
+  </div>
+
 </div>

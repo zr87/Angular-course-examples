@@ -9,7 +9,7 @@ export class ChildAComponent implements OnInit {
 
 
   @Input()
-  inputData: string;
+  dataFromParent: string;
 
   constructor() {}
 

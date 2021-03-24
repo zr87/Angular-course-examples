@@ -5,9 +5,13 @@
   padding: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 
-  div {
+  .flex-container {
     margin-top: 30px;
     padding: 10px;
     display: flex;
+    justify-content: space-around;
+    & > div {
+      margin-left: 30px;
+    }
   }
 }
