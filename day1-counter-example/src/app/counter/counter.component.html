@@ -1,0 +1,8 @@
+<p>counter works!</p>
+
+<h2 [class]="number > 0 ? 'green' : 'red'">
+  Counter: {{ number }}
+</h2>
+
+<button (click)="onClick(1)">increment</button>
+<button (click)="onClick(-1)">decrement</button>

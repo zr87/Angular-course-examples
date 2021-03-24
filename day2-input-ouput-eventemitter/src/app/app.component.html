@@ -1,0 +1,11 @@
+<h1>App component (parent component)</h1>
+
+<h3>Output from childB? {{ dataFromChildB }}</h3>
+
+<h4> {{ title }}</h4>
+
+<div>
+  <app-child-a [inputData]="dataToChildA"></app-child-a>
+  <app-child-b (dataToParent)="handleOutput($event)"></app-child-b>
+  <app-child-c [(data)]="title"></app-child-c>
+</div>
