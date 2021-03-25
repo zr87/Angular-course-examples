@@ -1,0 +1,7 @@
+<h1>counter works!</h1>
+
+Counter: {{ counter }}
+<app-decrease ></app-decrease>
+<app-increase
+  [interval]="step"
+  (increment)="onIncrement($event)"></app-increase>
