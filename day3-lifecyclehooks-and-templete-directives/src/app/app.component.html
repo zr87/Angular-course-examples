@@ -1,0 +1,36 @@
+<app-child [data]="num"></app-child>
+
+<!-- ngif -->
+<p *ngIf="true">
+  Expression is true and ngIf is true.
+  This paragraph is in the DOM.
+</p>
+
+<p *ngIf="''">
+  Expression is false and ngIf is false.
+  This paragraph is not in the DOM.
+</p>
+
+<ul>
+  <ng-container *ngIf="num > 5">
+    <li *ngFor="let hero of heroes; index as i; count as c; first as isFirst; last as isLast; odd as isOdd" [class.graybg]="isOdd">
+      <span > ({{i}}) {{ hero.name }}</span> - First: {{isFirst}}/ Last: {{isLast}}
+    </li>
+  </ng-container>
+  </ul>
+
+<!-- switch -->
+<div [ngSwitch]="switchVar"  *ngIf="false" >
+  <div *ngSwitchCase="'Batman'"> Bruce Wayne</div>
+  <div *ngSwitchCase="'Spiderman'"> Peter Parker</div>
+  <div *ngSwitchDefault> no clue </div>
+</div>
+
+
+
+<!--  <pre>
+    <code>
+        {{ heroes  | json }}
+    </code>
+  </pre>
+-->
