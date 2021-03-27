@@ -48,10 +48,19 @@ import {Component} from '@angular/core';
             {{ num | abs}}
             
         </div>-->
+
+        <div>
+            <h2> Highlight pipe</h2>
+            <p [innerHTML]="paragraph | emojify | highlight: 'lorem' : 'b': 'lightgreen'"></p>
+        </div>
+       
         
-        <input type="text" #textInput >
-        
-        <p [innerHTML]="paragraph | highlight: 'lorem' : 'b': 'lightgreen'"></p>
+        <div>
+            <h2> 3rd party pipe: emojify</h2>
+            <p>
+                {{ someTxt | emojify}}
+            </p>
+        </div>
         
     `,
     styleUrls: ['./app.component.scss']
@@ -75,6 +84,7 @@ export class AppComponent {
 Sed id leo in lacus dictum eleifend posuere non leo. Nam eu nisi rhoncus, aliquet lacus quis, efficitur velit. Quisque odio velit, sollicitudin sed quam ac, posuere fermentum massa. Nulla feugiat eleifend est, a pellentesque odio congue nec. Aliquam elementum justo metus. Maecenas aliquet volutpat libero auctor egestas. Aliquam nec fringilla sapien. Curabitur commodo dapibus congue. Fusce vulputate feugiat finibus. In hac habitasse platea dictumst. Ut lobortis magna felis, sit amet hendrerit libero posuere et. Fusce pulvinar laoreet rhoncus. Aenean nec lacus eu velit viverra accumsan vitae et dolor.
 Sed ultrices eu orci ac maximus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque elementum cursus nisl vel vestibulum. Nunc eleifend ex nisi, id scelerisque nisl placerat at. Quisque consequat odio congue nisl sollicitudin, vitae varius justo egestas. Quisque vel pretium dolor, quis posuere elit. Duis ac fermentum diam. Nullam euismod velit non nunc posuere, nec tempor tellus pellentesque. Nam hendrerit viverra arcu, at ultrices felis ultricies id. Aliquam tempor nec erat at blandit. Vivamus a pretium leo.
 Cras feugiat enim a finibus hendrerit. Pellentesque volutpat lacus ut metus eleifend, in condimentum ante faucibus. Maecenas tincidunt elit nisi, et imperdiet leo pellentesque eu. Praesent vitae massa ac mauris egestas eleifend eget vestibulum augue. Phasellus non dictum neque. Cras mollis quam et dui tempus porttitor. Praesent lacinia malesuada fringilla. Sed molestie lacus elit, eget dapibus augue vulputate in. Morbi id volutpat mauris, et egestas augue. Mauris magna augue, tincidunt a mauris sit amet, aliquam vestibulum ligula. Nulla et bibendum justo, vitae efficitur dui. Suspendisse quis malesuada felis. Duis vitae varius lacus, et pulvinar lectus. Vestibulum hendrerit ut augue a tempor. Maecenas hendrerit magna tempus, imperdiet justo eu, dictum dolor.
-Maecenas a porttitor tellus. Sed sed leo leo. Donec pretium turpis sit amet aliquam convallis. Morbi nibh nisl, posuere suscipit mollis nec, laoreet eu diam. Etiam in porta urna, et vulputate odio. Aliquam feugiat ornare felis, sit amet condimentum urna. 
+Maecenas a porttitor tellus. Sed sed leo leo. Donec pretium turpis sit amet aliquam convallis. Morbi nibh nisl, posuere suscipit mollis nec, laoreet eu diam. Etiam in porta urna, et vulputate odio. Aliquam feugiat ornare felis, sit amet condimentum urna. :rocket: 
     `
+    someTxt = ` :tea: :heart: :wink: :grinning:`; //https://emojipedia.org/
 }

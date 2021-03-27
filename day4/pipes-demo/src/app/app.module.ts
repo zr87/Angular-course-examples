@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AbsolutePipe } from './absolute.pipe';
 import { HighlightPipe } from './highlight.pipe';
+import {EmojifyModule} from "angular-emojify";
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { HighlightPipe } from './highlight.pipe';
     HighlightPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    EmojifyModule
   ],
   providers: [],
   bootstrap: [AppComponent]
