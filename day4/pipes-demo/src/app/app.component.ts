@@ -8,33 +8,46 @@ import {Component} from '@angular/core';
             <h1>Welcome to {{title}}!</h1>
         </div>
         
-<!--        <div>-->
-<!--          <h2>json</h2>-->
-<!--          {{ user }}-->
-<!--        </div>-->
-<!--        -->
-<!--        <div>-->
-<!--          <h2>lowercase, uppercase</h2>-->
-<!--          {{ user.firstname  }} {{ user.lastname}}-->
-<!--        </div>-->
+        <div>
+          <h2>json</h2>
+          {{ user | json }}
+        </div>
+        
+        <div>
+          <h2>lowercase, uppercase</h2>
+          {{ user.firstname | uppercase }} {{ user.lastname | lowercase }}
+        </div>
 
-<!--        <div>-->
-<!--          <h2>titlecase</h2>-->
-<!--          {{ user.title }}-->
-<!--        </div>-->
+        <div>
+          <h2>titlecase</h2>
+          {{ user.title | titlecase }}
+        </div>
 
-<!--        <div>-->
-<!--          <h2>date</h2>-->
-<!--          {{ user.dateOfBirth }}-->
-<!--          &lt;!&ndash; https://angular.io/api/common/DatePipe &ndash;&gt;-->
-<!--        </div>-->
-<!--        -->
-<!--        <div>-->
-<!--          <h2>currency </h2>-->
-<!--          {{ user.salary }}-->
-<!--        </div>-->
+        <div>
+          <h2>date</h2>
+          {{ user.dateOfBirth | date: 'full': 'PST': 'en-US' | uppercase | lowercase }}
+          <!-- https://angular.io/api/common/DatePipe -->
+        </div>
+        
+        <div>
+          <h2>currency </h2>
+          {{ user.salary | currency: 'asd' }}
+        </div>
+        
+        <div>
+            <h2>slice pipe</h2>
+            
+            {{ title | slice: 0: 3}}
+        </div>
         
         <!-- https://angular.io/api?type=pipe -->
+        
+        
+        <div>
+            <h2> Custom pipe: absolute</h2>
+            {{ num | abs}}
+            
+        </div>
     `,
     styleUrls: ['./app.component.scss']
 })
@@ -49,4 +62,6 @@ export class AppComponent {
         dateOfBirth: Date.now(), // Date.now()
         salary: 1000000
     }
+
+    num = 42342342;
 }
