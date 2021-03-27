@@ -49,8 +49,6 @@ import {Component} from '@angular/core';
             
         </div>-->
         
-        <input type="text" #textInput >
-        
         <p [innerHTML]="paragraph | highlight: 'lorem' : 'b': 'lightgreen'"></p>
         
     `,
