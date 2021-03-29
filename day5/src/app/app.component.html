@@ -1,0 +1,55 @@
+<!-- ng if else -->
+
+<ng-template #myTpl>
+  <p [style.background]="color"> {{ names | json }} </p>
+</ng-template>
+
+<ng-template #noItemsTpl>
+  <p>
+    no items yet
+  </p>
+</ng-template>
+
+
+<div *ngIf="names.length > 0 then myTpl; else noItemsTpl">
+
+</div>
+
+<!--
+<div *ngIf="names.length == 0">
+asd
+</div>
+-->
+
+
+
+<!--ngStyle-->
+<div>
+  <p [ngStyle]="style">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur dolore minus mollitia nam perspiciatis quos, reiciendis voluptas! Adipisci, debitis dolorum, eum exercitationem id natus perferendis qui quo vel veritatis voluptatum!
+  </p>
+</div>
+
+<div [class]="title">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur culpa delectus eligendi, error et eum hic maiores natus necessitatibus nesciunt officiis optio perferendis provident qui repellendus, repudiandae sequi vitae!
+</div>
+
+<div [class.truthy]="names.length > 3">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur culpa delectus eligendi, error et eum hic maiores natus necessitatibus nesciunt officiis optio perferendis provident qui repellendus, repudiandae sequi vitae!
+</div>
+
+<hr>
+<div [ngClass]="{
+    'firstClass': names.length > 1,
+    '2mdClass': isTrue,
+    '3rdClass': color === 'pink'}"
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias cum distinctio eos est exercitationem, expedita ipsa maiores nostrum nulla obcaecati optio provident, tenetur ullam veniam vitae voluptates. Fugit, quam!
+</div>
+
+<hr>
+<!-- template ref-->
+
+<input #inputEl  type="text" (input)="onInputChange(inputEl)">
+
+<button>{{inputEl.value}}</button>
