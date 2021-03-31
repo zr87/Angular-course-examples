@@ -8,6 +8,8 @@ export interface Post {
 }
 
 
+
+
 @Component({
   selector: 'app-root',
   template: `
