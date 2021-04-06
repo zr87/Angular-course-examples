@@ -1,0 +1,24 @@
+
+<h3>3. global level error handling (with http interceptor)</h3>
+
+<button (click)="makeApiCall()">make a call</button>
+
+
+<div *ngIf="errorMessage then errorTpl; else successTpl"></div>
+
+<ng-template #successTpl>
+  <pre *ngIf="data.length > 0" class="success">
+    <code >
+          {{ data | json }}
+    </code>
+  </pre>
+</ng-template>
+
+<ng-template #errorTpl>
+  <div class="error">
+         <p> {{ errorMessage }}</p>
+  </div>
+</ng-template>
+
+
+<hr>
