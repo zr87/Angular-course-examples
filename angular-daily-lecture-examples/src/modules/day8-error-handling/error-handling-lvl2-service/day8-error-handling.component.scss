@@ -1,0 +1,15 @@
+:host {
+  display: block;
+}
+.error {
+  background: lightpink;
+  border: 1px solid crimson;
+  padding: 20px;
+  text-align: center;
+  margin: 10px;
+}
+
+.success {
+  background: lightgreen;
+  border: 1px solid limegreen;
+}

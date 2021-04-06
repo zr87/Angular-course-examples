@@ -1,0 +1,24 @@
+
+<h3>2. service level error handling</h3>
+
+<button (click)="makeApiCall()">make a call</button>
+
+
+<div *ngIf="errorMessage then errorTpl; else successTpl"></div>
+
+<ng-template #successTpl>
+  <pre *ngIf="data.length > 0" class="success">
+    <code >
+          {{ data | json }}
+    </code>
+  </pre>
+</ng-template>
+
+<ng-template #errorTpl>
+  <div class="error">
+         <b> {{ errorMessage }}</b>
+  </div>
+</ng-template>
+
+
+<hr>
