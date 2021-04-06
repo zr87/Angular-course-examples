@@ -1,0 +1,28 @@
+
+<h1>day8-error-handling</h1>
+
+<h3>1. component level error handling</h3>
+
+<button (click)="makeApiCall()">make a call</button>
+
+
+<div *ngIf="error then errorTpl; else successTpl"></div>
+
+<ng-template #successTpl>
+  <pre *ngIf="data.length > 0 " class="success">
+    <code >
+          {{ data | json }}
+    </code>
+  </pre>
+</ng-template>
+
+<ng-template #errorTpl>
+  <pre class="error">
+    <code>
+          {{ error | json }}
+    </code>
+  </pre>
+</ng-template>
+
+
+<hr>
