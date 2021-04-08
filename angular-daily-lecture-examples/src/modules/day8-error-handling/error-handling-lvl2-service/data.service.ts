@@ -21,6 +21,17 @@ export class DataService {
     );
   }
 
+ /* getPost(id: number , limit = 3): Observable<Post[] | string>  {
+    return this.http.get<Post[]>(DataService.API_URL, {
+      params: new HttpParams().set('_limit', limit.toString()) // set limit query param
+    }).pipe(
+      retry(1),
+      catchError(this.handleError)
+    );
+  }*/
+
+
+
   handleError(error: HttpErrorResponse): Observable<string> {
 
     let errorMessage = '';
@@ -30,9 +41,7 @@ export class DataService {
       errorMessage = `Client-side error: ${error.message}`;
     } else {
       // server-side error
-      errorMessage = `server-side error:
-      Error Code: ${error.status}
-      Message: ${error.message}`;
+      errorMessage = `server-side error: Error Code: ${error.status} Message: ${error.message}`;
     }
 
     window.alert(errorMessage);

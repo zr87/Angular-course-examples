@@ -6,7 +6,7 @@ import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
   providedIn: 'root'
 })
 export class DataService {
-  static  readonly API_URL = `https://jsonplaceholder.typicode.com/posts`;
+  static  readonly API_URL = `https://jsonplaceholder.typicode.com/posts3`;
 
   constructor(private http: HttpClient) {}
 

@@ -23,20 +23,22 @@ export class Day8ErrorHandlingComponent implements OnInit {
 
   makeApiCall(): void {
     this.dataService.getPosts()
-      .subscribe(posts => {
-        this.data = posts;
-      }, error => {
+      .subscribe(
+        posts => {
+          console.log("next" );
+          this.data = posts;
+        }, error => {
 
-        console.log("error object", error); // error: instance of HttpErrorResponse
-        this.error = error;
-        // this.handleError(error);
-      }, () => {
-        console.log("completed");
-      });
+          // console.log("error object", error); // error: instance of HttpErrorResponse
+          this.error = error;
+          this.handleError(error);
+        }, () => {
+          console.log("completed");
+        });
   }
 
   // step 2. intro
- /* handleError(error: HttpErrorResponse): void {
+  handleError(error: HttpErrorResponse): void {
     if (error.error instanceof ProgressEvent) {
       // client-side error
       this.errorMessage = `Error: ${error.message}`;
@@ -45,7 +47,7 @@ export class Day8ErrorHandlingComponent implements OnInit {
       this.errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
     }
 
-    window.alert(this.errorMessage);
-  }*/
+    // window.alert(this.errorMessage);
+  }
 
 }
