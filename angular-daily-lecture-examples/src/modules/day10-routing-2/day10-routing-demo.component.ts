@@ -1,21 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+
+interface Nav {
+  link: string;
+  name: string;
+  exact: boolean;
+}
 
 @Component({
-  selector: 'app-day9-routing-demo',
+  selector: 'app-day10-routing-demo',
   template: `
     <h1>Routing demo (day2)</h1>
 
-    <ul >
-      <li>
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">home</a>
-      </li>
-      <li>
-        <a routerLink="/page1" routerLinkActive="active" >page 1</a>
-      </li>
-      <li>
-        <a routerLink="/page2" routerLinkActive="active" >page 2</a>
-      </li>
-    </ul>
+    <nav>
+      <a *ngFor="let item of nav"
+        [routerLink]="item.link"
+         routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: item.exact }">
+        {{ item.name }}
+      </a>
+    </nav>
+
 
     <router-outlet></router-outlet>
   `,
@@ -23,9 +27,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Day10RoutingDemoComponent implements OnInit {
 
+  nav: Nav[] = [
+    {link: "/", exact: true, name: "home"},
+    {link: "/page1", exact: false, name: "page 1"},
+    {link: "/page1/asd", exact: false, name: "page 1 (/page1/asd)"},
+    {link: "/page1/42/john", exact: false, name: "page 1 (/page1/42/john)"},
+    {link: "/page2", exact: false, name: "page 2"},
+  ];
 
-
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
