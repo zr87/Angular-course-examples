@@ -9,17 +9,16 @@ interface Nav {
 @Component({
   selector: 'app-day11-routing-demo',
   template: `
-    <h1>Routing demo (day2)</h1>
+    <h1>Routing demo (day3)</h1>
 
     <nav>
       <a *ngFor="let item of nav"
-        [routerLink]="item.link"
+         [routerLink]="item.link"
          routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: item.exact }">
+         [routerLinkActiveOptions]="{ exact: item.exact }">
         {{ item.name }}
       </a>
     </nav>
-
 
     <router-outlet></router-outlet>
   `,
