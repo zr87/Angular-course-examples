@@ -8,6 +8,7 @@ import {ErrorHandlingLvl2ServiceModule} from "../modules/day8-error-handling/err
 import {ErrorHandlingLvl3GlobalModule} from "../modules/day8-error-handling/error-handling-lvl3-global/error-handling-lvl3-global.module";
 import {Day9RoutingDemoModule} from "../modules/day9-routing-1/day9-routing-demo.module";
 import {Day10RoutingDemoModule} from "../modules/day10-routing-2/day10-routing-demo.module";
+import {Day11RoutingDemoModule} from "../modules/day11-routing-3/day11-routing-demo.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {Day10RoutingDemoModule} from "../modules/day10-routing-2/day10-routing-d
     // ErrorHandlingLvl2ServiceModule, // day8
     //  ErrorHandlingLvl3GlobalModule // day8
     // Day9RoutingDemoModule // day9 Routing part1
-    Day10RoutingDemoModule // day9 Routing part1
+    // Day10RoutingDemoModule // day9 Routing part2
+     Day11RoutingDemoModule // day9 Routing part3
   ],
   providers: [],
   bootstrap: [AppComponent]
