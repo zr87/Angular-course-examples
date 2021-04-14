@@ -1,3 +1,51 @@
 <h1>Ng Forms I.: Template-driven forms</h1>
 
 
+<form #contactForm="ngForm" (submit)="onSumit(contactForm)">
+  <label for="nameField">Name:</label>
+  <input type="text" #nameField="ngModel"
+         name="nameField"
+         id="nameField"
+         required
+         autocomplete="off"
+         minlength="6"
+         [ngModel]="initialValues.name"
+         placeholder="Fill your name please!">
+  <div class="error" *ngIf="nameField.invalid && !nameField.value && nameField.touched" >
+    Please fill your name! (Name is required)
+  </div>
+  <div class="error" *ngIf="nameField.invalid && nameField.value.length <= 6  && nameField.touched" >
+    Input should be atleast 6 characters long ! (Input length)
+  </div>
+
+
+  <div><!--two way binding example -->
+    <label for="emailField">Email:</label><br>
+    <input type="text" name="emailField" id="emailField" [(ngModel)]="email" required>
+    <!--
+    <input type="text" name="EMAIL2" id="EMAIL2" [(ngModel)]="email">
+
+        <code> {{ email }} </code>
+        -->
+  </div>
+
+  <label for="dobField">Date of birth:</label>
+  <input type="date" name="dobField" id="dobField" ngModel required>
+
+  <div>
+    <input type="checkbox" name="acceptField" id="acceptField" [ngModel]="false" required>
+    <label for="acceptField">Accept t&c</label>
+  </div>
+
+
+  <div>
+    <button type="submit"  [disabled]="contactForm.invalid" >Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
+
+<code>
+  {{ contactForm.value | json  }}
+</code>
+<br>
+form validity: {{ contactForm.form.valid }}

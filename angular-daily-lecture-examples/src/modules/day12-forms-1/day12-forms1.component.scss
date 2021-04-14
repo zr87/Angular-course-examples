@@ -7,7 +7,37 @@ form {
     margin: 16px 0;
   }
 
+  /*
+  &.ng-invalid.ng-touched {
+    background: pink;
+  }
+  &.ng-valid.ng-touched {
+    background: lightgreen;
+  }
+  */
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    border-left: 5px solid red;
+    outline: 1px solid red;
+  }
+  input.ng-valid.ng-touched {
+    border: 1px solid lime;
+    border-left: 5px solid lime;
+
+  }
+
+  .error {
+    color: red;
+    font-family: Arial, inherit;
+    font-size: 10px;
+    margin-top: -15px;
+  }
 }
+
+
+
+
 
 
 

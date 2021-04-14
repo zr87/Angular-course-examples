@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-day12-forms1',
@@ -7,8 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Day12Forms1Component implements OnInit {
 
-  constructor() { }
+  initialValues = {
+    name: ""
+  };
 
-  ngOnInit(): void {}
+  email = "asd@asd.hu";
+
+  constructor() {
+  }
+
+  ngOnInit(): void {
+  }
+
+  onSumit(form: NgForm): void {
+    console.log("form", form);
+    console.log("form.value", form.value);
+  }
 
 }

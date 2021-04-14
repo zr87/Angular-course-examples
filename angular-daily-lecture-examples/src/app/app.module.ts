@@ -23,7 +23,7 @@ import {Day12Forms1Module} from "../modules/day12-forms-1/day12-forms-1.module";
     // Day9RoutingDemoModule // day9 Routing part1
     // Day10RoutingDemoModule // day9 Routing part2
     // Day11RoutingDemoModule // day9 Routing part3
-    Day12Forms1Module
+    Day12Forms1Module // day12 Forms part1
   ],
   providers: [],
   bootstrap: [AppComponent]
