@@ -4,6 +4,7 @@ import {Page1Component} from "./page1.component";
 import {Page1ChildComponent} from "./page1-child/page1-child.component";
 import {Page1Child2Component} from "./page1-child2/page1-child2.component";
 import { Page1RoutingModule } from './page1-routing.module';
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -15,6 +16,7 @@ import { Page1RoutingModule } from './page1-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     Page1RoutingModule
   ]
 })

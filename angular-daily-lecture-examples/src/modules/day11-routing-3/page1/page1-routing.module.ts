@@ -10,7 +10,7 @@ const page1Routes = [
     path: "page1",
     children: [
       {path: "", component: Page1Component},
-      {path: ":id", component: Page1ChildComponent},
+      {path: ":id", component: Page1Component},
       {path: ":id/:name", component: Page1Child2Component},
     ]
   },
