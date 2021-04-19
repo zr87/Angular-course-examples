@@ -1,31 +1,58 @@
 <h1>Ng Forms II.: Reactive forms I.</h1>
 
-<form (submit)="onSubmit()">
+<form [formGroup]="myForm" (submit)="onSubmit()">
   <div>
     <label for="nameField">Name</label><br>
     <input type="text"
-           name="nameField"
            id="nameField"
+           formControlName="firstName"
            placeholder="Fill your name please!">
   </div>
 
   <div>
-    <label for="emailField">Email:</label><br>
-    <input type="email" name="emailField" id="emailField">
+    <label for="lastNameField">Last name</label><br>
+    <input type="text"
+           id="lastNameField"
+           formControlName="lastName" required
+           placeholder="Fill your last name please!">
   </div>
 
   <div>
-    <label for="dobField">Date of birth:</label> <br>
-    <input type="date" name="dobField" id="dobField">
+    <label for="emailField">Email</label><br>
+    <input type="text"
+           id="emailField"
+           formControlName="email"
+           placeholder="Fill your last name please!">
+    <!-- dont do this: myForm.get(...) Use getter on compoenent class !
+       <p class="error" *ngIf="myForm.get('email')?.invalid && myForm.get('email')?.touched">
+
+       control is invalid
+     </p>-->
+    <div class="error-containers" *ngIf="email?.invalid && email?.touched">
+
+      <p class="error" *ngIf="email?.errors?.required">
+        Please fill your email address!
+      </p>
+
+      <p class="error" *ngIf="email?.errors?.email">
+        Please fill a valid email address!
+      </p>
+    </div>
   </div>
 
   <div>
-    <input type="checkbox" name="acceptField" id="acceptField">
-    <label for="acceptField">Accept t&c</label>
+    <input type="checkbox" name="acceptField" id="acceptField" formControlName="terms">
+    <label for="acceptField">I accept terms</label>
+    <div class="error-containers" *ngIf="terms?.invalid && terms?.touched">
+
+      <p class="error" *ngIf="terms?.errors?.required">
+       PLease read and accept terms!
+      </p>
+    </div>
   </div>
 
   <div>
-    <button type="submit">Submit</button>
+    <button type="submit" >Submit</button>
     <button type="reset">Reset</button>
   </div>
 </form>
