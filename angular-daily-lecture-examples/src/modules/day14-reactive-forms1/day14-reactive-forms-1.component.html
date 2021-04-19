@@ -1,0 +1,31 @@
+<h1>Ng Forms II.: Reactive forms I.</h1>
+
+<form (submit)="onSubmit()">
+  <div>
+    <label for="nameField">Name</label><br>
+    <input type="text"
+           name="nameField"
+           id="nameField"
+           placeholder="Fill your name please!">
+  </div>
+
+  <div>
+    <label for="emailField">Email:</label><br>
+    <input type="email" name="emailField" id="emailField">
+  </div>
+
+  <div>
+    <label for="dobField">Date of birth:</label> <br>
+    <input type="date" name="dobField" id="dobField">
+  </div>
+
+  <div>
+    <input type="checkbox" name="acceptField" id="acceptField">
+    <label for="acceptField">Accept t&c</label>
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
