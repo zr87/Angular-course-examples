@@ -11,6 +11,22 @@ function passComplexityValidator(control: AbstractControl): ValidationErrors | n
   };
 }
 
+function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
+  const control1 = control.get('password');
+  const control2 = control.get('passwordAgain');
+
+  if (!control1 || !control2) {
+    return null;
+  }
+
+  const valid = control1.value === control2.value;
+
+  return valid ? null : {
+    passwordsNotMatching: true
+  };
+
+}
+
 @Component({
   selector: 'app-day15-reactive-forms2',
   templateUrl: './day15-reactive-forms-2.component.html',
@@ -35,7 +51,7 @@ export class Day15ReactiveForms2Component implements OnInit {
     ],
     password: [null, [passComplexityValidator/*Validators.required, Validators.minLength(8)*/]],
     passwordAgain: [null, [passComplexityValidator /*Validators.required, Validators.minLength(8)*/]]
-  });
+  }, { validators: passwordMatchValidator });
 
   constructor(private fb: FormBuilder) {
   }
@@ -48,6 +64,7 @@ export class Day15ReactiveForms2Component implements OnInit {
     console.log("this.myForm.value:", this.myForm.value);
     // console.log("myForm:", this.myForm);
     console.log("pass", this.password);
+    console.log(this.myForm);
     /* console.log("email", this.email);
      console.log("pass", this.password);
      console.log("pass again", this.passwordAgain);*/

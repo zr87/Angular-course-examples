@@ -45,6 +45,7 @@
   </div>
 
   <fieldset>
+
     <div>
       <label for="passwordField">Password</label><br>
       <input type="password" name="passwordField" id="passwordField" formControlName="password">
@@ -58,17 +59,26 @@
         </p>
       </div>
     </div>
+
+
     <div>
       <label for="passwordField">Password again</label><br>
       <input type="password" name="passwordAgainField" id="passwordAgainField" formControlName="passwordAgain">
-      <div class="error-containers" *ngIf="passwordAgain?.invalid && passwordAgain?.touched">
 
+      <div class="error-containers" *ngIf="passwordAgain?.invalid && passwordAgain?.touched">
         <p class="error" *ngIf="password?.errors?.required">
           Please write your password again!
         </p>
       </div>
+
     </div>
   </fieldset>
+
+  <div class="error-containers" *ngIf="myForm?.invalid && myForm?.dirty">
+    <p class="error" *ngIf="myForm?.hasError('passwordsNotMatching')">
+      Passwords are not matching!
+    </p>
+  </div>
 
   <div>
     <button type="submit" >Regiter</button>
