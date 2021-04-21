@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-day15-reactive-forms2',
@@ -8,26 +8,26 @@ import {AbstractControl, FormControl, FormGroup, Validators} from "@angular/form
 })
 export class Day15ReactiveForms2Component implements OnInit {
 
-  myForm: FormGroup = new FormGroup({
+  myForm: FormGroup = this.fb.group({
     firstName:
-      new FormControl(
-        null,
+      [null,
         [
           Validators.required,
           Validators.minLength(3),
         ]
-      ),
-    lastName: new FormControl(null),
-    email: new FormControl(
+      ],
+    lastName: null,
+    email: [
       null, [
         Validators.required,
         Validators.email,
-      ]),
-    password: new FormControl(null),
-    passwordAgain: new FormControl(null)
+      ]
+    ],
+    password: null,
+    passwordAgain: null
   });
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
@@ -35,11 +35,11 @@ export class Day15ReactiveForms2Component implements OnInit {
 
   onSubmit(): void {
 
-    console.log("myForm:", this.myForm.value);
-    console.log("myForm:", this.myForm);
-    console.log("email", this.email);
+    console.log("this.myForm.value:", this.myForm.value);
+    // console.log("myForm:", this.myForm);
+   /* console.log("email", this.email);
     console.log("pass", this.password);
-    console.log("pass again", this.passwordAgain);
+    console.log("pass again", this.passwordAgain);*/
   }
 
   get email(): AbstractControl | null {
