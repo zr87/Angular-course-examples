@@ -2,32 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators, ValidationErrors} from "@angular/forms";
 import {ValidatorService} from "./validator.service";
 import {map} from "rxjs/operators";
+import {RegistrationValidator} from "./registration.validator";
 
-/* This should be refctored to a separate class method! */
-function passComplexityValidator(control: AbstractControl): ValidationErrors | null {
-  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-
-  const valid = strongRegex.test(control.value);
-  return valid ? null : {
-    passWordComplexity: true
-  };
-}
-
-function passwordMatchValidator(control: AbstractControl): ValidationErrors | null {
-  const control1 = control.get('password');
-  const control2 = control.get('passwordAgain');
-
-  if (!control1 || !control2) {
-    return null;
-  }
-
-  const valid = control1.value === control2.value;
-
-  return valid ? null : {
-    passwordsNotMatching: true
-  };
-
-}
 
 @Component({
   selector: 'app-day15-reactive-forms2',
@@ -53,9 +29,15 @@ export class Day15ReactiveForms2Component implements OnInit {
         this.emailValidator.bind(this)
       ]
     ],
-    password: [null, [passComplexityValidator/*Validators.required, Validators.minLength(8)*/]],
-    passwordAgain: [null, [passComplexityValidator /*Validators.required, Validators.minLength(8)*/]]
-  }, { validators: passwordMatchValidator });
+    password: [null,
+      [
+        Validators.required, Validators.minLength(8), RegistrationValidator.passwordComplexity]],
+    passwordAgain: [
+      null,
+      [
+        Validators.required, Validators.minLength(8), RegistrationValidator.passwordComplexity]
+    ]
+  }, { validators: RegistrationValidator.passwordMatch });
 
   constructor(private fb: FormBuilder, private validator: ValidatorService) {
   }
@@ -63,7 +45,7 @@ export class Day15ReactiveForms2Component implements OnInit {
   ngOnInit(): void {
   }
 
-  emailValidator(control: AbstractControl): ValidationErrors | any {
+  emailValidator(control: AbstractControl): ValidationErrors | null {
     return this.validator.hasEmail(control.value)
       .pipe(
         map((hasEmail: boolean ) => {

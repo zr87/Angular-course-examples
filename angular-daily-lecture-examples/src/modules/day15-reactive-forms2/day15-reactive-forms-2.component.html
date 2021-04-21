@@ -57,7 +57,7 @@
         <p class="error" *ngIf="password?.errors?.required">
           Please choose a password!
         </p>
-        <p class="error" *ngIf="password?.hasError('passWordComplexity')">
+        <p class="error" *ngIf="password?.hasError('passwordComplexity')">
           <strong>Password is weak!</strong> <br>
           It should contain at least one lower, one upper case latter a digit and a special character
         </p>
