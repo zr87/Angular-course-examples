@@ -41,6 +41,10 @@
       <p class="error" *ngIf="email?.errors?.email">
         Please fill a valid email address!
       </p>
+
+      <p class="error" *ngIf="email?.hasError('alreadyRegistered')">
+        Please add another email!
+      </p>
     </div>
   </div>
 

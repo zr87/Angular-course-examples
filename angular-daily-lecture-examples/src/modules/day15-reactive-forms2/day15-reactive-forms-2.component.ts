@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators, ValidationErrors} from "@angular/forms";
+import {ValidatorService} from "./validator.service";
+import {map} from "rxjs/operators";
 
 /* This should be refctored to a separate class method! */
 function passComplexityValidator(control: AbstractControl): ValidationErrors | null {
@@ -47,16 +49,27 @@ export class Day15ReactiveForms2Component implements OnInit {
       null, [
         Validators.required,
         Validators.email,
+      ], [
+        this.emailValidator.bind(this)
       ]
     ],
     password: [null, [passComplexityValidator/*Validators.required, Validators.minLength(8)*/]],
     passwordAgain: [null, [passComplexityValidator /*Validators.required, Validators.minLength(8)*/]]
   }, { validators: passwordMatchValidator });
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private validator: ValidatorService) {
   }
 
   ngOnInit(): void {
+  }
+
+  emailValidator(control: AbstractControl): ValidationErrors | any {
+    return this.validator.hasEmail(control.value)
+      .pipe(
+        map((hasEmail: boolean ) => {
+          return !hasEmail ? null : { alreadyRegistered: true };
+        })
+      );
   }
 
   onSubmit(): void {
