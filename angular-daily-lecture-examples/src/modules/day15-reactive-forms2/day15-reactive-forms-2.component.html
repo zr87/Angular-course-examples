@@ -1,0 +1,80 @@
+<h1>Ng Forms II.: Reactive forms II.</h1>
+
+<ul class="small">
+  <li>FormBuilder</li>
+  <li>Custom Validator function</li>
+  <li>Custom Async Validator function</li>
+  <li>Form validator</li>
+</ul>
+
+
+<h2>Registration</h2>
+<form [formGroup]="myForm" (submit)="onSubmit()">
+  <div>
+    <label for="nameField">Name</label><br>
+    <input type="text"
+           id="nameField"
+           formControlName="firstName"
+           placeholder="Fill your name please!">
+  </div>
+
+  <div>
+    <label for="lastNameField">Last name</label><br>
+    <input type="text"
+           id="lastNameField"
+           formControlName="lastName" required
+           placeholder="Fill your last name please!">
+  </div>
+
+  <div>
+    <label for="emailField">Email</label> <br>
+    <input type="text"
+           id="emailField"
+           formControlName="email"
+           placeholder="Fill your last name please!">
+    <div class="error-containers" *ngIf="email?.invalid && email?.touched">
+
+      <p class="error" *ngIf="email?.errors?.required">
+        Please fill your email address!
+      </p>
+
+      <p class="error" *ngIf="email?.errors?.email">
+        Please fill a valid email address!
+      </p>
+    </div>
+  </div>
+
+  <fieldset>
+    <div>
+      <label for="passwordField">Password</label><br>
+      <input type="password" name="passwordField" id="passwordField" formControlName="password">
+      <div class="error-containers" *ngIf="password?.invalid && password?.dirty">
+        <p class="error" *ngIf="password?.errors?.required">
+          Please choose a password!
+        </p>
+      </div>
+    </div>
+    <div>
+      <label for="passwordField">Password again</label><br>
+      <input type="password" name="passwordAgainField" id="passwordAgainField" formControlName="passwordAgain">
+      <div class="error-containers" *ngIf="passwordAgain?.invalid && passwordAgain?.touched">
+
+        <p class="error" *ngIf="password?.errors?.required">
+          Please write your password again!
+        </p>
+      </div>
+    </div>
+  </fieldset>
+
+  <div>
+    <button type="submit" >Regiter</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
+
+<pre>
+  <code>
+    pass: {{ password?.value}}
+    passAgain {{ passwordAgain?.value}}
+  </code>
+</pre>

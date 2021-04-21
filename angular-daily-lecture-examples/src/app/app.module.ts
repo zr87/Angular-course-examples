@@ -11,6 +11,7 @@ import {Day10RoutingDemoModule} from "../modules/day10-routing-2/day10-routing-d
 import {Day11RoutingDemoModule} from "../modules/day11-routing-3/day11-routing-demo.module";
 import {Day12Forms1Module} from "../modules/day12-forms-1/day12-forms-1.module";
 import {Day14ReactiveForms1Module} from "../modules/day14-reactive-forms1/day14-reactive-forms-1.module";
+import {Day15ReactiveForms2Module} from "../modules/day15-reactive-forms2/day15-reactive-forms-2.module";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {Day14ReactiveForms1Module} from "../modules/day14-reactive-forms1/day14-
     // Day11RoutingDemoModule // day9 Routing part3
     // Day12Forms1Module // day12 Forms part1
     // day13: checkout branch day13_rxjs-switchmap-example
-    Day14ReactiveForms1Module
+    // Day14ReactiveForms1Module
+    Day15ReactiveForms2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
