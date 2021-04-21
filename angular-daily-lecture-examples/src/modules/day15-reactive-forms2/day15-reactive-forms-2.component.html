@@ -1,11 +1,11 @@
 <h1>Ng Forms II.: Reactive forms II.</h1>
 
-<ul class="small">
+<ol class="small">
   <li>FormBuilder</li>
   <li>Custom Validator function</li>
   <li>Custom Async Validator function</li>
   <li>Form validator</li>
-</ul>
+</ol>
 
 
 <h2>Registration</h2>
@@ -48,9 +48,13 @@
     <div>
       <label for="passwordField">Password</label><br>
       <input type="password" name="passwordField" id="passwordField" formControlName="password">
-      <div class="error-containers" *ngIf="password?.invalid && password?.dirty">
+      <div class="error-containers" *ngIf="password?.invalid && password?.touched">
         <p class="error" *ngIf="password?.errors?.required">
           Please choose a password!
+        </p>
+        <p class="error" *ngIf="password?.hasError('passWordComplexity')">
+          <strong>Password is weak!</strong> <br>
+          It should contain at least one lower, one upper case latter a digit and a special character
         </p>
       </div>
     </div>

@@ -1,5 +1,15 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AbstractControl, FormBuilder, FormGroup, Validators, ValidationErrors} from "@angular/forms";
+
+/* This should be refctored to a separate class method! */
+function passComplexityValidator(control: AbstractControl): ValidationErrors | null {
+  const strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
+
+  const valid = strongRegex.test(control.value);
+  return valid ? null : {
+    passWordComplexity: true
+  };
+}
 
 @Component({
   selector: 'app-day15-reactive-forms2',
@@ -23,8 +33,8 @@ export class Day15ReactiveForms2Component implements OnInit {
         Validators.email,
       ]
     ],
-    password: null,
-    passwordAgain: null
+    password: [null, [passComplexityValidator/*Validators.required, Validators.minLength(8)*/]],
+    passwordAgain: [null, [passComplexityValidator /*Validators.required, Validators.minLength(8)*/]]
   });
 
   constructor(private fb: FormBuilder) {
@@ -37,9 +47,10 @@ export class Day15ReactiveForms2Component implements OnInit {
 
     console.log("this.myForm.value:", this.myForm.value);
     // console.log("myForm:", this.myForm);
-   /* console.log("email", this.email);
     console.log("pass", this.password);
-    console.log("pass again", this.passwordAgain);*/
+    /* console.log("email", this.email);
+     console.log("pass", this.password);
+     console.log("pass again", this.passwordAgain);*/
   }
 
   get email(): AbstractControl | null {
