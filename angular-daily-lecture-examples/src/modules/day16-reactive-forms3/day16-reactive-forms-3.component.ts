@@ -29,17 +29,6 @@ export class Day16ReactiveForms3Component implements OnInit {
   }
 
   ngOnInit(): void {
-    // 1.1# set form Values: the bad way
-
-    setTimeout(() => {
-      this.myForm = this.fb.group({
-        name: this.fb.group({
-          first: "John", last: "Doe"
-        }),
-        email: "asd@asd.hu"
-      });
-    }, 2000);
-
 
     // 1.2# setting entire form with setValue
     //    - setValue you will need to pass key/values for all fields/controls,
