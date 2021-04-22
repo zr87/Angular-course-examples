@@ -49,6 +49,16 @@
            formControlName="email">
   </div>
 
+  <!-- valueCahnges Example-->
+  <div formGroupName="numbers">
+    <label>darabszamok</label> <br>
+    <input type="number" formControlName="num1"> <br>
+    <input type="number" formControlName="num2"><br>
+    <input type="number" formControlName="num3">
+
+    <p>Sum: <span>{{sum}}</span></p>
+  </div>
+
 
   <div>
     <button type="submit">Regiter</button>
