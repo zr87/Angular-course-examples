@@ -1,0 +1,38 @@
+form {
+  margin: 8px;
+  border: 1px solid gray;
+  padding: 8px;
+
+  & > *, {
+    display: block;
+    margin: 16px 0;
+  }
+
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+    border-left: 5px solid red;
+    outline: 1px solid red;
+  }
+  input.ng-valid.ng-touched {
+    border: 1px solid lime;
+    border-left: 5px solid lime;
+  }
+
+  .error {
+    color: red;
+    font-family: Verdana, sans-serif;
+    font-size: 10px;
+    margin-top: 0;
+  }
+}
+
+.small  {
+  font-size: 12px;
+}
+
+
+
+
+
+
+

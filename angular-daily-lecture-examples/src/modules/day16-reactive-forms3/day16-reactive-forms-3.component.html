@@ -1,0 +1,59 @@
+<h1>Ng Forms: Reactive forms III.</h1>
+
+<ol class="small">
+  <li>Setting values
+    <ol>
+      <li>reassigning FormGroup (works but don't do this way!)</li>
+      <li>setValue</li>
+      <li>patchValue</li>
+    </ol>
+  </li>
+  <li>Reading values
+    <ol>
+      <li>FormControl/FormGroup .value property</li>
+      <li>FormControl/FormGroup .valueChanges property (Observable)</li>
+    </ol>
+  </li>
+  <li>Form methods
+    <ol>
+      <li>disabled() method</li>
+      <li>reset() method</li>
+    </ol>
+  </li>
+
+</ol>
+
+<h2>Registration</h2>
+<form [formGroup]="myForm" (submit)="onSubmit()" autocomplete="off" novalidate autofocus>
+
+  <div formGroupName="name">
+    <div>
+      <label for="nameField">First name</label><br>
+      <input type="text"
+             id="nameField"
+             formControlName="first">
+    </div>
+
+    <div>
+      <label for="lastNameField">Last name</label><br>
+      <input type="text"
+             id="lastNameField"
+             formControlName="last" required>
+    </div>
+  </div>
+
+  <div>
+    <label for="emailField">Email</label> <br>
+    <input type="email"
+           id="emailField"
+           formControlName="email">
+  </div>
+
+
+  <div>
+    <button type="submit">Regiter</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
+
+
