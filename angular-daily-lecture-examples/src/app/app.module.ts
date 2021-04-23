@@ -13,6 +13,7 @@ import {Day12Forms1Module} from "../modules/day12-forms-1/day12-forms-1.module";
 import {Day14ReactiveForms1Module} from "../modules/day14-reactive-forms1/day14-reactive-forms-1.module";
 import {Day15ReactiveForms2Module} from "../modules/day15-reactive-forms2/day15-reactive-forms-2.module";
 import {Day16ReactiveForms3Module} from "../modules/day16-reactive-forms3/day16-reactive-forms-3.module";
+import {Day17ReactiveForms4Module} from "../modules/day17-reactive-forms4/day17-reactive-forms4.module";
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {Day16ReactiveForms3Module} from "../modules/day16-reactive-forms3/day16-
     // day13: checkout branch day13_rxjs-switchmap-example
     // Day14ReactiveForms1Module
     // Day15ReactiveForms2Module // Custom Validations
-    Day16ReactiveForms3Module,
+    // Day16ReactiveForms3Module, // setValue, valueChanges, .disable()/.enable(), .reset()
+    Day17ReactiveForms4Module // FormArray
   ],
   providers: [],
   bootstrap: [AppComponent]

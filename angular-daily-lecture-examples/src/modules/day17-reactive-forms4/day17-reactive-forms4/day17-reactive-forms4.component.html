@@ -1,0 +1,31 @@
+<h1>Ng Forms: Reactive forms IV.</h1>
+
+<ol class="small">
+
+</ol>
+
+<h2>Registration</h2>
+<form [formGroup]="myForm" (submit)="onSubmit()" autocomplete="off" novalidate autofocus>
+
+  <div>
+    <label for="nameField">name</label><br>
+    <input type="text"
+           id="nameField"
+           formControlName="name">
+  </div>
+
+
+  <div>
+    <label for="emailField">Email</label> <br>
+    <input type="email"
+           id="emailField"
+           formControlName="email">
+  </div>
+
+  <div>
+    <button type="submit">Register</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
+
+
