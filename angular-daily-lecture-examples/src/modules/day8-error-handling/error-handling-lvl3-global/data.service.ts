@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Observable, throwError} from "rxjs";
 import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
 
@@ -6,15 +6,18 @@ import {HttpClient, HttpErrorResponse, HttpParams} from "@angular/common/http";
   providedIn: 'root'
 })
 export class DataService {
-  static  readonly API_URL = `https://jsonplaceholder.typicode.com/posts3`;
+  static readonly API_URL = `https://jsonplaceholder.typicode.com/posts3`;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   // get all Users
-  getPosts(limit = 3): Observable<Post[]>  {
-    return this.http.get<Post[]>(DataService.API_URL, {
-      params: new HttpParams().set('_limit', limit.toString()) // set limit query param
-    });
+  getPosts(limit = 3): Observable<Post[]> {
+    return this.http.get<Post[]>(DataService.API_URL,
+      {
+        params: new HttpParams().set('_limit', limit.toString()) // set limit query param
+      }
+    );
   }
 }
 

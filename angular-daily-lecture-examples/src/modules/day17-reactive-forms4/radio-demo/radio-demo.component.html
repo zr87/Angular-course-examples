@@ -1,0 +1,12 @@
+<hr>
+
+<form [formGroup]="myForm2" (submit)="onSubmit()">
+  <input type="radio" formControlName="gender" value="male"> male
+  <input type="radio" formControlName="gender" value="female"> female
+  <input type="radio" formControlName="gender" value="n/a"> prefer not to say
+
+  <button type="submit">Send</button>
+</form>
+
+
+{{ myForm2.value | json }}

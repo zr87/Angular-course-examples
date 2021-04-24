@@ -22,7 +22,7 @@ export class Day8ErrorHandlingComponent implements OnInit {
   }
 
   makeApiCall(): void {
-    this.dataService.getPosts()
+    this.dataService.getPosts(10)
       .subscribe(
         posts => {
           this.data = posts;

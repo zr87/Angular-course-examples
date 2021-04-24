@@ -1,0 +1,26 @@
+<!--<select name="" id="" [formControl]="myForm">
+  <option value="" disabled selected>Select a city</option>
+  <option *ngFor="let city of cities">{{ city }}</option>
+</select>
+
+
+<pre>
+  {{ myForm.value | json }}
+</pre>-->
+
+<hr>
+
+<h2>Select in a group</h2>
+
+<form [formGroup]="myForm2" (ngSubmit)="onSubmit()">
+  <select name="citySelect" formControlName="city">
+    <option value="" disabled selected>Select a city</option>
+    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+  </select>
+
+  <button type="submit">Send</button>
+</form>
+
+<pre>
+  {{ myForm2.value | json }}
+</pre>
