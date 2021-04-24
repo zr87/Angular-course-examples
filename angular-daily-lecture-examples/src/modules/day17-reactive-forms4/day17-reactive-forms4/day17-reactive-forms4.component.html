@@ -22,6 +22,26 @@
            formControlName="email">
   </div>
 
+  <div formArrayName="users">
+    <label>Users:</label>
+    <div *ngFor="let control of users.controls; let i = index">
+      <input type="text" [formControlName]="i">
+    </div>
+
+  </div>
+
+  <button (click)="addChildren()">+ add child</button>
+  <div formArrayName="children">
+    <label> children</label>
+    <div class="group" *ngFor="let control of children.controls; let i = index" [formGroupName]="i">
+      <input type="text"  placeholder="name" formControlName="name"/>
+      <input type="text"  placeholder="age" formControlName="age" (keyup)="calcGrade(i) "/>
+      <input type="text"  placeholder="sign" formControlName="sign"/>
+      <input type="text"  placeholder="grade" formControlName="grade"/>
+      <button (click)="removeChild(i)">delete row</button>
+    </div>
+  </div>
+
   <div>
     <button type="submit">Register</button>
     <button type="reset">Reset</button>
