@@ -1,4 +1,4 @@
-<ng-content select="h3"></ng-content>
+<ng-content select="h3"></ng-content>  <!-- heading title-->
 
 <form [formGroup]="myForm" (submit)="onSubmit()">
   <label for="email">Email</label>
@@ -6,6 +6,8 @@
 
   <label for="pass">Password</label>
   <input type="text" id="pass">
+  <ng-content select="app-auth-remember"></ng-content> <!-- button slot-->
+  <p *ngIf="isRememberChecked" class="info">You will be logged in for 30 days!</p>
 
-  <ng-content select="button"></ng-content>
+  <ng-content select=".btn"></ng-content> <!-- button slot-->
 </form>

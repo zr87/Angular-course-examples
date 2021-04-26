@@ -1,15 +1,22 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, ContentChild, EventEmitter, OnInit, Output, AfterContentInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {AuthRememberComponent} from "../auth-remember/auth-remember.component";
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss']
 })
-export class FormComponent implements OnInit {
+export class FormComponent implements OnInit, AfterContentInit {
+
+  // 1. step
+  @ContentChild(AuthRememberComponent) rememberChild: AuthRememberComponent | undefined;
 
   @Output() submitData: EventEmitter<unknown> = new EventEmitter<unknown>();
-  constructor(private fb: FormBuilder) { }
+  isRememberChecked: boolean | undefined;
+
+  constructor(private fb: FormBuilder) {
+  }
 
   myForm = this.fb.group({
     email: null,
@@ -17,6 +24,15 @@ export class FormComponent implements OnInit {
   });
 
   ngOnInit(): void {
+  }
+
+  ngAfterContentInit(): void {
+    console.log("rememberChild", this.rememberChild);
+
+    this.rememberChild?.checked?.subscribe(checked => {
+      console.log("checkbox checked", checked);
+      this.isRememberChecked = checked;
+    });
   }
 
   onSubmit(): void {

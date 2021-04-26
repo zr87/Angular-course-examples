@@ -7,17 +7,23 @@ import {Component, OnInit} from '@angular/core';
 })
 export class Day18AdvancedComps1Component implements OnInit {
 
+  private remember: boolean | undefined;
+
   constructor() {}
 
   ngOnInit(): void {
   }
 
   loginUser(data: unknown): void {
-    console.log("loginUser", data);
+    console.log("loginUser", data, this.remember);
   }
 
   createUser(data: unknown): void {
     console.log("createUser", data);
   }
 
+  onRememberChecked(checked: boolean): void {
+    console.log("onRememberChecked", checked);
+    this.remember = checked;
+  }
 }

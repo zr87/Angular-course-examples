@@ -9,9 +9,19 @@
       <li>project single component</li>
     </ol>
   </li>
-  <li>@ContentChild() decorator - how to reach projected component</li>
+  <li>@ContentChild() decorator - how to reach projected component's instance</li>
+  <li>@ContentChildren() decorator - how to reach projected components' instances</li>
 </ol>
 
-<app-form (submitData)="loginUser($event)"></app-form>
+<app-form (submitData)="loginUser($event)">
+  <h3>Login</h3>
+  <button class="btn" type="submit">Login</button>
+  <app-auth-remember (checked)="onRememberChecked($event)"></app-auth-remember>
+</app-form>
 
-<app-form (submitData)="createUser($event)"></app-form>
+<app-form (submitData)="createUser($event)">
+  <h3>Registration</h3>
+  <button  class="btn" type="submit">Register</button>
+</app-form>
+
+
