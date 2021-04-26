@@ -1,11 +1,12 @@
 import {Component} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-day5-basics',
+  templateUrl: './day5-basics.component.html',
+  styleUrls: ['./day5-basics.component.scss']
 })
-export class AppComponent {
+export class Day5BasicsComponent {
+
   title = 'day5';
 
   color = 'lightpink';

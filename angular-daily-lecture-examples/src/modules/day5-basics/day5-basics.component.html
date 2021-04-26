@@ -1,3 +1,14 @@
+<h1>
+  Day5 Template basics
+</h1>
+
+<ol>
+  <li>ngIf/else,  ng-template</li>
+  <li>ngStyle</li>
+  <li>ngClass</li>
+  <li>template ref</li>
+</ol>
+
 <!-- ng if else -->
 
 <ng-template #myTpl>
@@ -52,4 +63,4 @@ asd
 
 <input #inputEl  type="text" (input)="onInputChange(inputEl)">
 
-<button>{{inputEl.value}}</button>
+<button>Input value: {{inputEl.value}}</button>
