@@ -9,7 +9,6 @@ export class RandomService {
   getRandomNumber(): number {
     return (Math.random() * 100);
   }
-
 }
 
 
