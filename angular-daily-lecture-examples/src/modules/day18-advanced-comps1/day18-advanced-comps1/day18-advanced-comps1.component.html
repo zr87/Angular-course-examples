@@ -1,0 +1,17 @@
+<h1>Content projection demo</h1>
+
+
+<ol>
+  <li>Simple content projection into a component (ng-content)
+    <ol>
+      <li>project single item - ng-content slot</li>
+      <li>project multiple items - ng-content named slots</li>
+      <li>project single component</li>
+    </ol>
+  </li>
+  <li>@ContentChild() decorator - how to reach projected component</li>
+</ol>
+
+<app-form (submitData)="loginUser($event)"></app-form>
+
+<app-form (submitData)="createUser($event)"></app-form>

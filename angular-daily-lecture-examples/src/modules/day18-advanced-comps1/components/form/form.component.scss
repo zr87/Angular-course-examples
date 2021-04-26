@@ -1,0 +1,13 @@
+:host {
+  display: inline-block;
+  width: 200px;
+  padding: 16px;
+  border: 1px solid lightgrey;
+
+  label, input, button {
+    display: block;
+  }
+  button {
+    margin-top: 32px;
+  }
+}
