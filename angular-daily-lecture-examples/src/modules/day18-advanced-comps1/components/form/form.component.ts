@@ -1,4 +1,11 @@
-import {Component, ContentChild, EventEmitter, OnInit, Output, AfterContentInit} from '@angular/core';
+import {
+  Component,
+  ContentChild,
+  EventEmitter,
+  OnInit,
+  Output,
+  AfterContentInit,
+} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {AuthRememberComponent} from "../auth-remember/auth-remember.component";
 
@@ -11,6 +18,7 @@ export class FormComponent implements OnInit, AfterContentInit {
 
   // 1. step
   @ContentChild(AuthRememberComponent) rememberChild: AuthRememberComponent | undefined;
+
 
   @Output() submitData: EventEmitter<unknown> = new EventEmitter<unknown>();
   isRememberChecked: boolean | undefined;
@@ -26,8 +34,9 @@ export class FormComponent implements OnInit, AfterContentInit {
   ngOnInit(): void {
   }
 
+  // 2. step get projected component instance in AfterInit lifecycle hook method
   ngAfterContentInit(): void {
-    console.log("rememberChild", this.rememberChild);
+    // console.log("rememberChild", this.rememberChild);
 
     this.rememberChild?.checked?.subscribe(checked => {
       console.log("checkbox checked", checked);
