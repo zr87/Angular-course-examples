@@ -8,7 +8,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "db:day7": "json-server ./mocks/db-day7.json --watch"
   },
   "private": true,
   "dependencies": {

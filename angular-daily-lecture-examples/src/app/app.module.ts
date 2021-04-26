@@ -15,6 +15,7 @@ import {Day15ReactiveForms2Module} from "../modules/day15-reactive-forms2/day15-
 import {Day16ReactiveForms3Module} from "../modules/day16-reactive-forms3/day16-reactive-forms-3.module";
 import {Day17ReactiveForms4Module} from "../modules/day17-reactive-forms4/day17-reactive-forms4.module";
 import {Day18AdvancedComps1Module} from "../modules/day18-advanced-comps1/day18-advanced-comps1.module";
+import {Day7HttpClientModule} from "../modules/day7-http-client/day7-http-client.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {Day18AdvancedComps1Module} from "../modules/day18-advanced-comps1/day18-
   ],
   imports: [
     BrowserModule,
+    Day7HttpClientModule, // day7 Httpclient
     // ErrorHandlingLvl1ComponentModule, // day8
     // ErrorHandlingLvl2ServiceModule, // day8
     // ErrorHandlingLvl3GlobalModule // day8
