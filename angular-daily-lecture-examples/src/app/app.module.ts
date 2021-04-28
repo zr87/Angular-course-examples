@@ -21,6 +21,7 @@ import {Day17ReactiveForms4Module} from "../modules/day17-reactive-forms4/day17-
 import {Day18AdvancedComps1Module} from "../modules/day18-advanced-comps1/day18-advanced-comps1.module";
 import {Day5BasicsComponent} from "../modules/day5-basics/day5-basics.component";
 import {Day5BasicsModule} from "../modules/day5-basics/day5-basics.module";
+import {Day19AdvancedComps2Module} from "../modules/day19-advanced-comps2/day19-advanced-comps2.module";
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import {Day5BasicsModule} from "../modules/day5-basics/day5-basics.module";
     // Day16ReactiveForms3Module, // setValue, valueChanges, .disable()/.enable(), .reset()
     // Day17ReactiveForms4Module // FormArray
 
-    Day18AdvancedComps1Module // Content projection
+    Day18AdvancedComps1Module, // Content projection
+    Day19AdvancedComps2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
