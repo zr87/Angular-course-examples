@@ -22,6 +22,8 @@ import {Day18AdvancedComps1Module} from "../modules/day18-advanced-comps1/day18-
 import {Day5BasicsComponent} from "../modules/day5-basics/day5-basics.component";
 import {Day5BasicsModule} from "../modules/day5-basics/day5-basics.module";
 import {Day19AdvancedComps2Module} from "../modules/day19-advanced-comps2/day19-advanced-comps2.module";
+import {Day20Directives1Module} from "../modules/day20-directives1/day20-directives1.module";
+import {SharedModule} from "../modules/day20-directives1/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -49,7 +51,8 @@ import {Day19AdvancedComps2Module} from "../modules/day19-advanced-comps2/day19-
     // Day17ReactiveForms4Module // FormArray
 
     Day18AdvancedComps1Module, // Content projection
-    Day19AdvancedComps2Module
+    Day19AdvancedComps2Module, // ElementRef
+    Day20Directives1Module,
   ],
   providers: [],
   bootstrap: [AppComponent]
