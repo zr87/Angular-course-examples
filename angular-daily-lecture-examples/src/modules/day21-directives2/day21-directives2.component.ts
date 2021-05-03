@@ -13,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
     <hr>
 
     <h2> Example 1: HostListener LogClickdirective</h2>
-    <button> click me!    </button>
+    <button appLogClick (click)="callOnClick($event)"> click me!</button>
+    <input type="text" appLogClick>
+
+    <h2>Example 2: HostBinding</h2>
+    <p appHostbindingExample>Lorem ipsum dolor sit amet.</p>
   `,
   styleUrls: ['./day21-directives2.component.scss']
 })
@@ -23,4 +27,7 @@ export class Day21Directives2Component implements OnInit {
 
   ngOnInit(): void {}
 
+  callOnClick($event: MouseEvent): void {
+    console.log("event", $event);
+  }
 }

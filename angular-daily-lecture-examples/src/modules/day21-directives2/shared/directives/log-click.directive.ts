@@ -9,8 +9,28 @@ export class LogClickDirective {
 
   constructor(private el: ElementRef) {}
 
-  @HostListener('click')
-  onClick(): void {
-    console.log('Host Element clicked', this.el.nativeElement);
+  @HostListener('click', ['$event.target'])
+  onClick(event: any): void {
+    console.log('Host Element clicked', event);
   }
+
+/*  @HostListener('mouseover')
+  onMouseOver(): void {
+    console.log('Host Element hover', this.el.nativeElement);
+  }
+
+  @HostListener('mouseleave')
+  onMouseLeave(): void {
+    console.log('Host Element mouse left', this.el.nativeElement);
+  }
+
+  @HostListener('focus')
+  onFocus(): void {
+    console.log('Host Element focus', this.el.nativeElement);
+  }
+
+  @HostListener('keyup')
+  onKeyup(): void {
+    console.log('Host Element onKeyup', this.el.nativeElement);
+  }*/
 }
