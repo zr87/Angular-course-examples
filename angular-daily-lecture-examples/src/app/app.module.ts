@@ -25,6 +25,8 @@ import {Day19AdvancedComps2Module} from "../modules/day19-advanced-comps2/day19-
 import {Day20Directives1Module} from "../modules/day20-directives1/day20-directives1.module";
 import {SharedModule} from "../modules/day20-directives1/shared/shared.module";
 import {Day21Directives2Module} from "../modules/day21-directives2/day21-directives2.module";
+import {Day22RoutingModule} from "../modules/day22-lazy-loading/day22-routing.module";
+import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-loading.module";
 
 @NgModule({
   declarations: [
@@ -54,7 +56,10 @@ import {Day21Directives2Module} from "../modules/day21-directives2/day21-directi
     // Day18AdvancedComps1Module, // Content projection
     // Day19AdvancedComps2Module, // ElementRef
     // Day20Directives1Module, // Directives I.
-    Day21Directives2Module, // Directives II.
+    // Day21Directives2Module, // Directives II.
+    Day22RoutingModule,
+    Day22LazyLoadingModule,
+    // Lazy Loading
   ],
   providers: [],
   bootstrap: [AppComponent]
