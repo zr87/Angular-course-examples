@@ -22,6 +22,10 @@ import { Component, OnInit } from '@angular/core';
     <hr>
     <h3>Rainbow directive</h3>
     <input type="text" appRainbow>
+
+    <hr>
+    <h3>Hun Phone Validator directive</h3>
+    <input type="text" appHunPhoneFormatter>
   `,
   styleUrls: ['./day21-directives2.component.scss']
 })
