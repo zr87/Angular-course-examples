@@ -57,9 +57,7 @@ import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-l
     // Day19AdvancedComps2Module, // ElementRef
     // Day20Directives1Module, // Directives I.
     // Day21Directives2Module, // Directives II.
-    Day22RoutingModule,
-    Day22LazyLoadingModule,
-    // Lazy Loading
+    Day22LazyLoadingModule, // Lazy Loading
   ],
   providers: [],
   bootstrap: [AppComponent]

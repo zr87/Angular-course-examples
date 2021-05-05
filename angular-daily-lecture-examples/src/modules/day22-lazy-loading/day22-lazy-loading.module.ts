@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Day22LazyLoadingComponent } from './day22-lazy-loading.component';
-import {LazyModule} from "./lazy/lazy.module";
+
 import {Day22RoutingModule} from "./day22-routing.module";
 
 
@@ -16,7 +16,7 @@ import {Day22RoutingModule} from "./day22-routing.module";
   imports: [
     CommonModule,
     Day22RoutingModule,
-    LazyModule,
+    // LazyModule //deleted from , brought import to loadChildren
   ]
 })
 export class Day22LazyLoadingModule { }
