@@ -27,6 +27,7 @@ import {SharedModule} from "../modules/day20-directives1/shared/shared.module";
 import {Day21Directives2Module} from "../modules/day21-directives2/day21-directives2.module";
 import {Day22RoutingModule} from "../modules/day22-lazy-loading/day22-routing.module";
 import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-loading.module";
+import {Day23RouteGuardsModule} from "../modules/day23-route-guards/day23-route-guards.module";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-l
   ],
   imports: [
     BrowserModule,
-    Day5BasicsModule, // ngIf else, ngStyle, ngClass, tempalte #ref
+    // Day5BasicsModule, // ngIf else, ngStyle, ngClass, tempalte #ref
     // Day6ServiceModule,
     // Day7HttpClientModule, // day7 Httpclient
 
@@ -57,7 +58,8 @@ import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-l
     // Day19AdvancedComps2Module, // ElementRef
     // Day20Directives1Module, // Directives I.
     // Day21Directives2Module, // Directives II.
-    Day22LazyLoadingModule, // Lazy Loading
+    // Day22LazyLoadingModule, // Lazy Loading
+    Day23RouteGuardsModule // Route guards I.
   ],
   providers: [],
   bootstrap: [AppComponent]
