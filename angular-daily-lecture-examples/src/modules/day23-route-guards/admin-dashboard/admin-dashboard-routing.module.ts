@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {AdminGuard} from "../admin.guard";
 import {AdminDashboardComponent} from "./admin-dashboard.component";
-import {AdminSettingComponent} from "./admin-setting.component";
-import {AdminMainComponent} from "./admin-main.component";
+import {AdminSettingComponent} from "./components/admin-setting.component";
+import {AdminMainComponent} from "./components/admin-main.component";
 
 const routes: Routes = [
   {

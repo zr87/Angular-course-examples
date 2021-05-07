@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { AdminDashboardRoutingModule } from './admin-dashboard-routing.module';
 import {AdminDashboardComponent} from "./admin-dashboard.component";
-import { AdminSettingComponent } from './admin-setting.component';
-import { AdminMainComponent } from './admin-main.component';
+import { AdminSettingComponent } from './components/admin-setting.component';
+import { AdminMainComponent } from './components/admin-main.component';
 
 
 @NgModule({
