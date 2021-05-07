@@ -28,6 +28,7 @@ import {Day21Directives2Module} from "../modules/day21-directives2/day21-directi
 import {Day22RoutingModule} from "../modules/day22-lazy-loading/day22-routing.module";
 import {Day22LazyLoadingModule} from "../modules/day22-lazy-loading/day22-lazy-loading.module";
 import {Day23RouteGuardsModule} from "../modules/day23-route-guards/day23-route-guards.module";
+import {Day24RouteGuards2Module} from "../modules/day24-route-guards2/day24-route-guards2.module";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import {Day23RouteGuardsModule} from "../modules/day23-route-guards/day23-route-
     // Day20Directives1Module, // Directives I.
     // Day21Directives2Module, // Directives II.
     // Day22LazyLoadingModule, // Lazy Loading
-    Day23RouteGuardsModule // Route guards I.
+    // Day23RouteGuardsModule // Route guards I.
+    Day24RouteGuards2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
