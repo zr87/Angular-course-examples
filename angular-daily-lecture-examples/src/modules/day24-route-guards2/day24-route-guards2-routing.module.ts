@@ -3,8 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import {ExampleComponent} from "./components/example.component";
 
 const routes: Routes = [
-  {
-    path: 'admin', component: ExampleComponent
+  { // canDeactivate example
+    path: 'example',
+    component: ExampleComponent
+  },
+  { // Resolver example
+    path: 'example2',
+    component: ExampleComponent
   }
 ];
 

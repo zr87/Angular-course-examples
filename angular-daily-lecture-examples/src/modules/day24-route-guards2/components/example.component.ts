@@ -12,6 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExampleComponent implements OnInit {
 
+  isDirty = true;
+
   constructor() { }
 
   ngOnInit(): void {
