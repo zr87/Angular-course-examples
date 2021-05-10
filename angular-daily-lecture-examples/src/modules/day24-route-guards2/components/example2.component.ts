@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {ActivatedRoute} from "@angular/router";
+import {User} from "../user.resolver";
 
 @Component({
   selector: 'app-example2',
@@ -17,17 +19,14 @@ import {HttpClient} from "@angular/common/http";
 })
 export class Example2Component implements OnInit {
 
-  users: any[] = [];
+  users: User[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    // component already initialized
-    this.http     // a bit late to fetch data to display
-      .get('https://jsonplaceholder.typicode.com/users')
-      .subscribe((data) => {
-        this.users = data as any;
-      });
+    console.log("router", this.router.snapshot.data.users);
+    console.log("users", this.users);
+    this.users =  this.router.snapshot.data.users;
   }
 
 }

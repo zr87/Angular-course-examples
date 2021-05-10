@@ -6,6 +6,8 @@ import {Day24RouteGuards2Component} from "./components/day24-route-guards2.compo
 import {ExampleComponent} from "./components/example.component";
 import { HttpClientModule} from "@angular/common/http";
 import { Example2Component } from './components/example2.component';
+import {ExampleGuard} from "./example.guard";
+import {UserResolver} from "./user.resolver";
 
 
 
@@ -23,6 +25,6 @@ import { Example2Component } from './components/example2.component';
     HttpClientModule,
     Day24RouteGuards2RoutingModule
   ],
-  providers: []
+  providers: [ExampleGuard, UserResolver]
 })
 export class Day24RouteGuards2Module { }
