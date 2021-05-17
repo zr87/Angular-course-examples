@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
       day25-auth works!
     </h2>
 
+    <nav>
+      <ul>
+        <li> <a routerLink="login"> login</a></li>
+        <li> <a routerLink="dashboard"> dashboard (protected)</a></li>
+      </ul>
+    </nav>
+
     <router-outlet></router-outlet>
   `,
   styles: [
