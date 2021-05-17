@@ -1,0 +1,27 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "car": "blabla",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "car": "Shelby Cobra",
+      "userId": 2
+    }
+  ],
+  "users": [
+    {
+      "email": "admin@asd.hu",
+      "password": "$2a$10$zxc1CIR02fnsknPsYFSZn.PSn30oFFOaWSZ4L9eMzqTqQuK4UuMAa",
+      "id": 1
+    },
+    {
+      "email": "john@doe.com",
+      "password": "$2a$10$5Xm/7Pua2Yk2qjUrn/lPt.Nmt9ceDR0rkpEzb5C3ulbbfVqargYka",
+      "name": "John doe",
+      "id": 2
+    }
+  ]
+}
