@@ -15,17 +15,11 @@ export class CarsService {
   }
 
   getCars(): Observable<Car[]> {
-    const jwtToken = this.auth.currentJwtValue;
-    console.log("acccessToken 2", jwtToken, jwtToken.accessToken);
+    return this.http.get<Car[]>(environment.API_URL + "/640/" + CarsService.CARS_API_PATH);
+  }
 
-
-    const header = new HttpHeaders({
-      Authorization: `Bearer ${jwtToken.accessToken}`
-    });
-
-    return this.http.get<Car[]>(environment.API_URL + "/640/" + CarsService.CARS_API_PATH, {
-      headers: header
-    });
+  getCarById(id: number): Observable<Car>{
+    return this.http.get<Car>(environment.API_URL + "/640/" + CarsService.CARS_API_PATH + "/" + id);
   }
 }
 

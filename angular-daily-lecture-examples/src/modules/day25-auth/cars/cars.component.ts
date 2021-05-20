@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Car, CarsService} from "./cars.service";
 
 @Component({
@@ -9,22 +9,28 @@ import {Car, CarsService} from "./cars.service";
       cars works!
     </h2>
 
-     <ul>
-       <li *ngFor="let car of cars"> {{ car.car }}</li>
-     </ul>
+    <ul>
+      <li *ngFor="let car of cars"> {{ car.car }}</li>
+    </ul>
   `,
-  styles: [
-  ]
+  styles: []
 })
 export class CarsComponent implements OnInit {
   cars: Car[] = [];
 
-  constructor(private carsService: CarsService) { }
+  constructor(private carsService: CarsService) {
+  }
 
   ngOnInit(): void {
     this.carsService.getCars().subscribe(data => {
       this.cars = data;
     });
+
+    this.carsService.getCarById(1).subscribe(
+      data => {
+        console.log("data", data);
+      }
+    );
   }
 
 }
