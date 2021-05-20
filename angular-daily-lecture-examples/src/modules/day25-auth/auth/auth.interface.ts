@@ -4,7 +4,7 @@ export interface LoginCredential {
 }
 
 export interface AccessToken {
-  acccessToken: string;
+  accessToken: string;
 }
 
 export interface User {

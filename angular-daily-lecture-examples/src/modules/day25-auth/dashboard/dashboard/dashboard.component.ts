@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     <p>
       dashboard works!
     </p>
+
+    <app-cars></app-cars>
   `,
   styles: [
   ]
